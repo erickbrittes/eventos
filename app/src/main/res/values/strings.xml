@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Eventos</string>
+    <string name="label_button_details">Detalhes</string>
+    <string name="label_button_chech_in">Check-in</string>
+</resources>
