@@ -8,16 +8,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.erickfelipebrittes.mobile.eventos.R
 import com.erickfelipebrittes.mobile.eventos.activities.DetalhesActivity
 import com.erickfelipebrittes.mobile.eventos.activities.MainActivity
-import com.erickfelipebrittes.mobile.eventos.services.models.Evento
-import com.erickfelipebrittes.mobile.eventos.utils.convertStringToCalendar
-import com.squareup.picasso.Picasso
+import com.erickfelipebrittes.mobile.eventos.services.models.Result
 import kotlinx.android.synthetic.main.item_evento.view.*
 
 
-class EventoListAdapter(val activity: MainActivity) :
-    RecyclerView.Adapter<EventoListAdapter.EventoListViewHolder>() {
+class PokemonResulListAdapter(val activity: MainActivity) :
+    RecyclerView.Adapter<PokemonResulListAdapter.EventoListViewHolder>() {
 
-    private val items = mutableListOf<Evento>()
+    private val items = mutableListOf<Result>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventoListViewHolder {
         val itemView =
@@ -27,7 +25,7 @@ class EventoListAdapter(val activity: MainActivity) :
 
     override fun getItemCount(): Int = items.size
 
-    fun updateList(newList: List<Evento>) {
+    fun updateList(newList: List<Result>) {
         items.clear()
         items.addAll(newList)
         notifyDataSetChanged()
@@ -39,26 +37,20 @@ class EventoListAdapter(val activity: MainActivity) :
 
     inner class EventoListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        private val imagem = itemView.iv_imagem
-        private val title = itemView.tv_title
-        private val description = itemView.tv_description
-        private val date = itemView.tv_date
+        private val imagem = itemView.details_iv_photo
+        private val title = itemView.details_tv_name
+        private val description = itemView.details_tv_number
+        private val date = itemView.details_tv_stats
         private val btDetails = itemView.bt_details
 
-        fun configure(item: Evento) {
-            Picasso.get()
-                .load(item.image)
-                .placeholder(R.drawable.ic_cloud_queue_black_24dp)
-                .error(R.drawable.ic_error_outline_black_24dp)
-                .into(imagem)
+        fun configure(item: Result) {
 
-            title.text = item.title
-            description.text = item.description
-            date.text = convertStringToCalendar(item.date)
+            title.text = item.name
+            description.text = item.url
 
             btDetails.setOnClickListener {
                 val intentDetalhes = Intent(activity, DetalhesActivity::class.java)
-                intentDetalhes.putExtra(DetalhesActivity.KEY_EXTRA_ID, item.id)
+                intentDetalhes.putExtra(DetalhesActivity.KEY_EXTRA_ID, item.url)
                 activity.startActivity(intentDetalhes)
             }
         }

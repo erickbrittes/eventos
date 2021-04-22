@@ -46,6 +46,6 @@ class BackendService(context: Context) {
             .build()
     }
 
-    // Eventos
-    fun getEventosService(): EventoService = retrofit.create(EventoService::class.java)
+    // Pokemon List
+    fun getPokemonListService(): PokeAPIService = retrofit.create(PokeAPIService::class.java)
 }

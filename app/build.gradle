@@ -21,12 +21,12 @@ android {
     buildTypes {
         debug {
             debuggable true
-            buildConfigField "String", "URL_SERVER", "\"http://5f5a8f24d44d640016169133.mockapi.io/\""
+            buildConfigField "String", "URL_SERVER", "\"https://pokeapi.co/api/v2/\""
             versionNameSuffix "-debug"
         }
         release {
             minifyEnabled
-            buildConfigField "String", "URL_SERVER", "\"http://5f5a8f24d44d640016169133.mockapi.io/\""
+            buildConfigField "String", "URL_SERVER", "\"https://pokeapi.co/api/v2/\""
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             versionNameSuffix "-release"
         }
@@ -53,7 +53,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
 
     //GSON
     implementation 'com.google.code.gson:gson:2.8.6'

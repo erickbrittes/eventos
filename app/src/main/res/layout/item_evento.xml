@@ -8,7 +8,7 @@
     android:orientation="horizontal">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/iv_imagem"
+        android:id="@+id/details_iv_photo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -32,28 +32,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_imagem">
+        app:layout_constraintTop_toBottomOf="@+id/details_iv_photo">
 
         <TextView
-            android:id="@+id/tv_title"
+            android:id="@+id/details_tv_name"
             style="@style/ItemTitleBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/tv_description"
+            android:id="@+id/details_tv_number"
             style="@style/ItemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/tv_date"
+            android:id="@+id/details_tv_stats"
             style="@style/ItemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:id="@+id/tv_price"
+            android:id="@+id/details_tv_weight"
             style="@style/ItemDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

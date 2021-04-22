@@ -2,4 +2,11 @@
     <string name="app_name">Eventos</string>
     <string name="label_button_details">Detalhes</string>
     <string name="label_button_chech_in">Check-in</string>
+
+    <string name="label_base_stat">base_stat: %1$d</string>
+    <string name="label_effort">effort: %1$d</string>
+    <string name="label_stat">stat: %1$s</string>
+    <string name="label_weight">weight: %1$d</string>
+    <string name="label_slot">slot: %1$d</string>
+    <string name="label_type">type: %1$s</string>
 </resources>
